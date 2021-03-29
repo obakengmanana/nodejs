@@ -1,0 +1,32 @@
+[
+  {
+    "name": "contact",
+    "path": "/contact",
+    "component": "C:\\\\nodejs\\\\assessment\\\\pages\\\\contact.vue",
+    "chunkName": "pages/contact"
+  },
+  {
+    "name": "finalize",
+    "path": "/finalize",
+    "component": "C:\\\\nodejs\\\\assessment\\\\pages\\\\finalize.vue",
+    "chunkName": "pages/finalize"
+  },
+  {
+    "name": "health",
+    "path": "/health",
+    "component": "C:\\\\nodejs\\\\assessment\\\\pages\\\\health.vue",
+    "chunkName": "pages/health"
+  },
+  {
+    "name": "list",
+    "path": "/list",
+    "component": "C:\\\\nodejs\\\\assessment\\\\pages\\\\list.vue",
+    "chunkName": "pages/list"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\nodejs\\\\assessment\\\\pages\\\\index.vue",
+    "chunkName": "pages/index"
+  }
+]

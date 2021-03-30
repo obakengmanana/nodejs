@@ -87,4 +87,10 @@ html {
   padding: 7px;
   border-radius: 12px;
 }
+
+.dlt-btn{
+  color: #007bff;
+  cursor: pointer;
+  font-weight: 700;
+}
 </style>

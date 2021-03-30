@@ -64,12 +64,12 @@ module.exports = ___CSS_LOADER_EXPORT___;
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/list.vue?vue&type=template&id=709eb92a&
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_vm._ssrNode("<h3 class=\"p-3 text-center\">Persons list</h3> "),_vm._ssrNode("<div class=\"overflow-auto\">","</div>",[_c('b-table',{attrs:{"id":"my-table","items":_vm.items,"per-page":_vm.perPage,"current-page":_vm.currentPage,"small":"","hover":"","fields":_vm.fields}}),_vm._ssrNode(" "),_c('b-pagination',{attrs:{"total-rows":_vm.rows,"per-page":_vm.perPage,"aria-controls":"my-table"},model:{value:(_vm.currentPage),callback:function ($$v) {_vm.currentPage=$$v},expression:"currentPage"}}),_vm._ssrNode(" <p class=\"mt-3\">"+_vm._ssrEscape("Current Page: "+_vm._s(_vm.currentPage))+"</p>")],2)],2)}
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./pages/list.vue?vue&type=template&id=51d3ed7c&
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"container"},[_vm._ssrNode("<h3 class=\"p-3 text-center\">Persons list</h3> "),_vm._ssrNode("<div class=\"overflow-auto\">","</div>",[_c('b-table',{attrs:{"id":"my-table","items":_vm.items,"per-page":_vm.perPage,"current-page":_vm.currentPage,"small":"","hover":"","fields":_vm.fields},scopedSlots:_vm._u([{key:"cell(dltUser)",fn:function(data){return [_c('button',{staticClass:"dlt-btn",on:{"click":function($event){return _vm.deletePerson(data.item.id)}}},[_vm._v("\n          Delete\n        ")])]}}])}),_vm._ssrNode(" "),_c('b-pagination',{attrs:{"total-rows":_vm.rows,"per-page":_vm.perPage,"aria-controls":"my-table"},model:{value:(_vm.currentPage),callback:function ($$v) {_vm.currentPage=$$v},expression:"currentPage"}}),_vm._ssrNode(" <p class=\"mt-3\">"+_vm._ssrEscape("Current Page: "+_vm._s(_vm.currentPage))+"</p>")],2)],2)}
 var staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./pages/list.vue?vue&type=template&id=709eb92a&
+// CONCATENATED MODULE: ./pages/list.vue?vue&type=template&id=51d3ed7c&
 
 // EXTERNAL MODULE: ./middleware/dataservice.js + 1 modules
 var dataservice = __webpack_require__(15);
@@ -80,6 +80,10 @@ var external_vue_default = /*#__PURE__*/__webpack_require__.n(external_vue_);
 
 // EXTERNAL MODULE: external "bootstrap-vue"
 var external_bootstrap_vue_ = __webpack_require__(29);
+
+// EXTERNAL MODULE: external "vue-router"
+var external_vue_router_ = __webpack_require__(7);
+var external_vue_router_default = /*#__PURE__*/__webpack_require__.n(external_vue_router_);
 
 // EXTERNAL MODULE: ./node_modules/bootstrap/dist/css/bootstrap.css
 var bootstrap = __webpack_require__(34);
@@ -114,6 +118,13 @@ var bootstrap_vue = __webpack_require__(36);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
 
 
 
@@ -121,6 +132,7 @@ var bootstrap_vue = __webpack_require__(36);
 
 external_vue_default.a.use(external_bootstrap_vue_["BootstrapVue"]);
 external_vue_default.a.use(external_bootstrap_vue_["IconsPlugin"]);
+external_vue_default.a.use(external_vue_router_default.a);
 /* harmony default export */ var listvue_type_script_lang_js_ = ({
   data() {
     const fields = [{
@@ -128,7 +140,8 @@ external_vue_default.a.use(external_bootstrap_vue_["IconsPlugin"]);
       label: 'ID'
     }, {
       key: 'name',
-      label: 'First Name'
+      label: 'First Name',
+      formatter: 'firstName'
     }, {
       key: 'last_name',
       label: 'Last Name'
@@ -149,7 +162,11 @@ external_vue_default.a.use(external_bootstrap_vue_["IconsPlugin"]);
       label: 'Weight (kg)'
     }, {
       key: 'r_sick',
-      label: 'Recently Sick'
+      label: 'Recently Sick',
+      formatter: 'rsickbool'
+    }, {
+      key: 'dltUser',
+      label: 'Delete'
     }];
     return {
       perPage: 10,
@@ -168,6 +185,30 @@ external_vue_default.a.use(external_bootstrap_vue_["IconsPlugin"]);
     });
   },
 
+  methods: {
+    rsickbool(value) {
+      var rsick = false;
+
+      if (value == 1) {
+        rsick = true;
+      }
+
+      return `${rsick}`;
+    },
+
+    deletePerson(id) {
+      if (confirm('Do you really want to delete?')) {
+        dataservice["default"].delete(id).then(response => {
+          console.log(response.data);
+        }).catch(e => {
+          console.log(e);
+        }); // eslint-disable-next-line
+
+        this.$router.go();
+      }
+    }
+
+  },
   computed: {
     rows() {
       return this.items.length;

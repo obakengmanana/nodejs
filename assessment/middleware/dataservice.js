@@ -18,7 +18,7 @@ class DataService {
   }
 
   delete(id) {
-    return http.delete(`/delete/${id}`);
+    return http.get(`/del/${id}`);
   }
 
   deleteAll() {

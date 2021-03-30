@@ -565,7 +565,7 @@ class dataservice_DataService {
   }
 
   delete(id) {
-    return http_common.delete(`/delete/${id}`);
+    return http_common.get(`/del/${id}`);
   }
 
   deleteAll() {
@@ -721,7 +721,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 var ___CSS_LOADER_EXPORT___ = ___CSS_LOADER_API_IMPORT___(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.i, "html{\n  font-family:\"Source Sans Pro\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;\n  font-size:16px;\n  word-spacing:1px;\n  -ms-text-size-adjust:100%;\n  -webkit-text-size-adjust:100%;\n  -moz-osx-font-smoothing:grayscale;\n  -webkit-font-smoothing:antialiased;\n  box-sizing:border-box\n}\n*,:after,:before{\n  box-sizing:border-box;\n  margin:0\n}\n.button--green{\n  display:inline-block;\n  border-radius:4px;\n  border:1px solid #3b8070;\n  color:#3b8070;\n  text-decoration:none;\n  padding:10px 30px\n}\n.top-buttons{\n  padding:5px;\n  border-radius:14px;\n  border:2px solid #007bff\n}\n.button--green:hover{\n  color:#fff;\n  background-color:#3b8070\n}\n.button--grey{\n  display:inline-block;\n  border-radius:4px;\n  border:1px solid #35495e;\n  color:#35495e;\n  text-decoration:none;\n  padding:10px 30px;\n  margin-left:15px\n}\n.button--grey:hover{\n  color:#fff;\n  background-color:#35495e\n}\n.heading{\n  font-size:1.5rem!important;\n  line-height:2.5rem!important;\n  font-family:fantasy;\n  text-align:center\n}\n.next-btn{\n  margin-top:30px;\n  border:2px solid green;\n  padding:5px;\n  border-radius:12px\n}\n.prev-btn{\n  margin-top:30px;\n  margin-right:20px;\n  border:2px solid red;\n  padding:7px;\n  border-radius:12px\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.i, "html{\n  font-family:\"Source Sans Pro\",-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,sans-serif;\n  font-size:16px;\n  word-spacing:1px;\n  -ms-text-size-adjust:100%;\n  -webkit-text-size-adjust:100%;\n  -moz-osx-font-smoothing:grayscale;\n  -webkit-font-smoothing:antialiased;\n  box-sizing:border-box\n}\n*,:after,:before{\n  box-sizing:border-box;\n  margin:0\n}\n.button--green{\n  display:inline-block;\n  border-radius:4px;\n  border:1px solid #3b8070;\n  color:#3b8070;\n  text-decoration:none;\n  padding:10px 30px\n}\n.top-buttons{\n  padding:5px;\n  border-radius:14px;\n  border:2px solid #007bff\n}\n.button--green:hover{\n  color:#fff;\n  background-color:#3b8070\n}\n.button--grey{\n  display:inline-block;\n  border-radius:4px;\n  border:1px solid #35495e;\n  color:#35495e;\n  text-decoration:none;\n  padding:10px 30px;\n  margin-left:15px\n}\n.button--grey:hover{\n  color:#fff;\n  background-color:#35495e\n}\n.heading{\n  font-size:1.5rem!important;\n  line-height:2.5rem!important;\n  font-family:fantasy;\n  text-align:center\n}\n.next-btn{\n  margin-top:30px;\n  border:2px solid green;\n  padding:5px;\n  border-radius:12px\n}\n.prev-btn{\n  margin-top:30px;\n  margin-right:20px;\n  border:2px solid red;\n  padding:7px;\n  border-radius:12px\n}\n.dlt-btn{\n  color:#007bff;\n  cursor:pointer;\n  font-weight:700\n}", ""]);
 // Exports
 module.exports = ___CSS_LOADER_EXPORT___;
 
@@ -2108,12 +2108,12 @@ var nuxt_loading_component = Object(componentNormalizer["a" /* default */])(
 // EXTERNAL MODULE: ./node_modules/@nuxtjs/tailwindcss/dist/runtime/tailwind.css
 var tailwind = __webpack_require__(22);
 
-// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=0b3842a5&
-var defaultvue_type_template_id_0b3842a5_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<div class=\"container\">","</div>",[_vm._ssrNode("<h1 class=\"text-4xl heading\">Dotsure Development Assessment</h1> <br> "),_c('NuxtLink',{staticClass:"top-buttons",attrs:{"to":"/list"}},[_vm._v("Show all users")]),_vm._ssrNode(" | \n    "),_c('NuxtLink',{staticClass:"top-buttons",attrs:{"to":"/"}},[_vm._v("Add new user")])],2),_vm._ssrNode(" "),_c('Nuxt')],2)}
-var defaultvue_type_template_id_0b3842a5_staticRenderFns = []
+// CONCATENATED MODULE: ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@nuxt/components/dist/loader.js??ref--0-0!./node_modules/vue-loader/lib??vue-loader-options!./layouts/default.vue?vue&type=template&id=d2a351d0&
+var defaultvue_type_template_id_d2a351d0_render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_vm._ssrNode("<div class=\"container\">","</div>",[_vm._ssrNode("<h1 class=\"text-4xl heading\">Dotsure Development Assessment</h1> <br> "),_c('NuxtLink',{staticClass:"top-buttons",attrs:{"to":"/list"}},[_vm._v("Show all users")]),_vm._ssrNode(" | \n    "),_c('NuxtLink',{staticClass:"top-buttons",attrs:{"to":"/"}},[_vm._v("Add new user")])],2),_vm._ssrNode(" "),_c('Nuxt')],2)}
+var defaultvue_type_template_id_d2a351d0_staticRenderFns = []
 
 
-// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=0b3842a5&
+// CONCATENATED MODULE: ./layouts/default.vue?vue&type=template&id=d2a351d0&
 
 // CONCATENATED MODULE: ./layouts/default.vue
 
@@ -2129,8 +2129,8 @@ if (style0.__inject__) style0.__inject__(context)
 
 var default_component = Object(componentNormalizer["a" /* default */])(
   script,
-  defaultvue_type_template_id_0b3842a5_render,
-  defaultvue_type_template_id_0b3842a5_staticRenderFns,
+  defaultvue_type_template_id_d2a351d0_render,
+  defaultvue_type_template_id_d2a351d0_staticRenderFns,
   false,
   default_injectStyles,
   null,
